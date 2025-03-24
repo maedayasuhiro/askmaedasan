@@ -25,9 +25,8 @@ export default function HomePage() {
         <div className="bg-white p-6 rounded-xl shadow-xl">
           <h2 className="text-2xl font-semibold mb-4">Product Purchase Request</h2>
           <form className="flex flex-col gap-4">
-            <input className="border rounded p-2" placeholder="Product URL or Shop Name" />
-            <input className="border rounded p-2" placeholder="Product Details (name, size, quantity)" />
-            <input className="border rounded p-2" placeholder="Shipping Address" />
+            <textarea className="border rounded p-2" placeholder="Describe what you want to get in Japan" />
+            <input className="border rounded p-2" placeholder="Your Email" />
             <button className="mt-4 bg-blue-500 text-white py-2 rounded">Request for £30 + Shipping</button>
           </form>
         </div>

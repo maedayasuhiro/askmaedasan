@@ -59,6 +59,10 @@ export default function HomePage() {
         </div>
       </div>
 
+<a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+  Privacy Policy & Terms
+</a>
+
       <footer className="mt-10 text-gray-600">© 2025 Ask Maeda-san. Making Japan Accessible.</footer>
     </div>
   );

@@ -12,12 +12,12 @@ export default function HomePage() {
       <div className="mb-10 max-w-3xl w-full">
         <h2 className="text-2xl font-semibold mb-4 text-center">How It Works</h2>
         <ol className="list-decimal list-inside bg-white p-6 rounded-xl shadow-md">
-          <li>User submits a request via the request form</li>
-          <li>Maeda-san (Admin) confirms the payment</li>
-          <li>Local Japanese staff completes the task</li>
-          <li>Staff reports completion to Maeda-san</li>
+          <li>You submits a request via the request form</li>
+          <li>Maeda-san (Admin) confirms the form and text you back via e-mail soon</li>
+          <li>Maeda-san (Admin) will get what is your need and you will complete the payment</li>
+          <li>Our Japanese Staff starts the task and we will report you when the task is completed</li>
           <li>User confirms task completion</li>
-          <li>Local staff receives payment</li>
+          <li>Thats it!</li>
         </ol>
       </div>
 

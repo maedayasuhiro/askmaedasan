@@ -24,20 +24,32 @@ export default function HomePage() {
       <div className="grid gap-6 md:grid-cols-2 max-w-4xl w-full mb-10">
         <div className="bg-white p-6 rounded-xl shadow-xl">
           <h2 className="text-2xl font-semibold mb-4">Product Purchase Request</h2>
-          <form className="flex flex-col gap-4">
-            <textarea className="border rounded p-2" placeholder="Describe what you want to get in Japan" />
-            <input className="border rounded p-2" placeholder="Your Email" />
-            <button className="mt-4 bg-blue-500 text-white py-2 rounded">Request for £30 + Shipping</button>
-          </form>
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdbCiEd5_AhNMNpdfjeIHxR7iIaVBtzjJUxA5lESqveBS96KQ/viewform?embedded=true"
+            width="100%" 
+            height="1200" 
+            frameBorder="0" 
+            marginHeight="0" 
+            marginWidth="0"
+            title="Product Purchase Request"
+          >
+            Loading…
+          </iframe>
         </div>
 
         <div className="bg-white p-6 rounded-xl shadow-xl">
           <h2 className="text-2xl font-semibold mb-4">Consultation Request</h2>
-          <form className="flex flex-col gap-4">
-            <textarea className="border rounded p-2" placeholder="Describe what you need help with in Japan" />
-            <input className="border rounded p-2" placeholder="Your Email" />
-            <button className="mt-4 bg-green-500 text-white py-2 rounded">Submit Consultation (£50 per request)</button>
-          </form>
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true"
+            width="100%" 
+            height="1100" 
+            frameBorder="0" 
+            marginHeight="0" 
+            marginWidth="0"
+            title="Consultation Request"
+          >
+            Loading…
+          </iframe>
         </div>
       </div>
 

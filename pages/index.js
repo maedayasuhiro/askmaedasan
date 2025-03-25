@@ -1,7 +1,18 @@
 import React from "react";
 import Link from "next/link";
+import { getAllPosts } from "../lib/posts";
 
-export default function HomePage() {
+export async function getStaticProps() {
+  const allPosts = getAllPosts();
+  const latestPosts = allPosts.slice(0, 3);
+  return {
+    props: {
+      latestPosts,
+    },
+  };
+}
+
+export default function HomePage({ latestPosts }) {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-8">
       <h1 className="text-4xl font-bold mb-6">Ask Maeda-san - Your Private Japanese Concierge</h1>
@@ -60,6 +71,20 @@ export default function HomePage() {
         </div>
       </div>
 
+      <div className="max-w-3xl w-full mb-10">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Latest Blog Posts</h2>
+        <div className="space-y-6">
+          {latestPosts.map((post) => (
+            <div key={post.slug} className="bg-white p-4 rounded shadow-md">
+              <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+              <p className="text-sm text-gray-500">{post.date}</p>
+              <p className="mb-2">{post.excerpt}</p>
+              <Link href={`/blog/${post.slug}`} className="text-blue-600 underline">Read More</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="mt-8">
         <Link href="/blog">
           <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
@@ -68,11 +93,9 @@ export default function HomePage() {
         </Link>
       </div>
 
-      <div className="mt-4">
-        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
-          Privacy Policy & Terms
-        </a>
-      </div>
+      <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+        Privacy Policy & Terms
+      </a>
 
       <footer className="mt-10 text-gray-600">© 2025 Ask Maeda-san. Making Japan Accessible.</footer>
     </div>

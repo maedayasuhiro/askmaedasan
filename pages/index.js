@@ -59,6 +59,18 @@ export default function HomePage() {
         </div>
       </div>
 
+    import Link from "next/link"; // まだなければ追加
+
+...
+
+<div className="mt-8">
+  <Link href="/blog">
+    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+      Visit Our Blog
+    </button>
+  </Link>
+</div>
+
 <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
   Privacy Policy & Terms
 </a>

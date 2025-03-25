@@ -9,6 +9,15 @@ export async function getStaticProps() {
   };
 }
 
+<div
+  className="min-h-screen bg-cover bg-center text-white p-8"
+  style={{ backgroundImage: "url('/bg-japan.jpg')" }}
+>
+  <div className="bg-black bg-opacity-50 p-8 rounded-xl w-full max-w-7xl mx-auto">
+    {/* ここに既存の中身を入れる */}
+  </div>
+</div>
+
 export default function HomePage({ posts }) {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4 md:p-8">

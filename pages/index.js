@@ -1,18 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { getAllPosts } from "../lib/posts";
 
-export async function getStaticProps() {
-  const allPosts = getAllPosts();
-  const latestPosts = allPosts.slice(0, 3);
-  return {
-    props: {
-      latestPosts,
-    },
-  };
-}
-
-export default function HomePage({ latestPosts }) {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-8">
       <h1 className="text-4xl font-bold mb-6">Ask Maeda-san - Your Private Japanese Concierge</h1>
@@ -20,6 +9,14 @@ export default function HomePage({ latestPosts }) {
         Need something from Japan? Whether it's a unique product, local shop purchase, or special request - Ask Maeda-san will handle it for you!<br />
         <strong>Local Japanese staff will fulfill your request directly in Japan.</strong>
       </p>
+
+      {/* Language Switch Buttons */}
+      <div className="mb-8 flex space-x-4">
+        <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">English</button>
+        <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">日本語</button>
+        <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Español</button>
+        <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Français</button>
+      </div>
 
       <div className="mb-10 max-w-3xl w-full">
         <h2 className="text-2xl font-semibold mb-4 text-center">How It Works</h2>
@@ -71,32 +68,20 @@ export default function HomePage({ latestPosts }) {
         </div>
       </div>
 
-      <div className="max-w-3xl w-full mb-10">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Latest Blog Posts</h2>
-        <div className="space-y-6">
-          {latestPosts.map((post) => (
-            <div key={post.slug} className="bg-white p-4 rounded shadow-md">
-              <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-              <p className="text-sm text-gray-500">{post.date}</p>
-              <p className="mb-2">{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} className="text-blue-600 underline">Read More</Link>
-            </div>
-          ))}
-        </div>
+      <div className="mt-8 mb-4 text-center">
+        <Link href="/blog">
+          <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+            Visit Our Blog
+          </button>
+        </Link>
       </div>
 
-<div className="mt-8 mb-4 text-center">
-  <Link href="/blog">
-    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
-      Visit Our Blog
-    </button>
-  </Link>
-</div>
+      <div className="mb-6 text-center">
+        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+          Privacy Policy & Terms
+        </a>
+      </div>
 
-<div className="mb-6 text-center">
-  <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
-    Privacy Policy & Terms
-  </a>
       <footer className="mt-10 text-gray-600">© 2025 Ask Maeda-san. Making Japan Accessible.</footer>
     </div>
   );

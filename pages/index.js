@@ -67,14 +67,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-        
-　　　　<div className="mt-8">
-  <Link href="/about">
-    <button className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">
-      About Me
-    </button>
-  </Link>
-</div>
+
       <div className="mt-8 mb-4 text-center">
         <Link href="/blog">
           <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">

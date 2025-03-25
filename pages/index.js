@@ -1,7 +1,17 @@
 import React from "react";
 import Link from "next/link";
+import { getAllPosts } from "@/lib/posts"; // 最新記事取得関数
 
-export default function HomePage() {
+export async function getStaticProps() {
+  const posts = getAllPosts();
+  return {
+    props: {
+      posts: posts.slice(0, 3), // 最新3件だけ
+    },
+  };
+}
+
+export default function HomePage({ posts }) {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-8">
       <h1 className="text-4xl font-bold mb-6">Ask Maeda-san - Your Private Japanese Concierge</h1>
@@ -51,14 +61,12 @@ export default function HomePage() {
             <p className="italic mb-2">Request: Japanese Product Delivery</p>
             <p>I am a textile artist and wanted to order washi paper yarn from Japan. Thanks to Ask Maeda-san, I was able to get materials only available locally. They even sent me some Japanese snacks along with it. It took a bit longer, but that's understandable as everything was sourced locally.</p>
           </div>
-
           <div className="bg-white p-4 rounded shadow-md">
             <p className="mb-2">★★★★★</p>
             <p className="font-semibold">Customer: Camy</p>
             <p className="italic mb-2">Request: Zoom Meeting</p>
             <p>I’m planning to study in Japan this fall and wanted to chat with a local. I used the consultation service and had a direct talk with Maeda-san. I learned a lot about job hunting in Japan and got great tips on sightseeing spots and restaurants. Thank you!</p>
           </div>
-
           <div className="bg-white p-4 rounded shadow-md">
             <p className="mb-2">★★★★★</p>
             <p className="font-semibold">Customer: David</p>
@@ -66,6 +74,28 @@ export default function HomePage() {
             <p>I wanted to explore Japan with a local guide. Kohei accompanied me during my trip and took me to his favorite izakaya and restaurants. Thank you, Kohei!</p>
           </div>
         </div>
+      </div>
+
+      {/* Latest Blog Section */}
+      <div className="max-w-4xl w-full mb-10">
+        <h2 className="text-2xl font-semibold mb-4 text-center">Latest Blog Posts</h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          {posts.map((post) => (
+            <div key={post.slug} className="bg-white rounded-xl shadow p-4">
+              <h3 className="text-xl font-bold mb-2">{post.title}</h3>
+              <p className="text-sm text-gray-600 mb-4">{post.excerpt}</p>
+              <Link href={`/blog/${post.slug}`} className="text-blue-500 hover:underline">Read more</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <Link href="/about">
+          <button className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">
+            About Me
+          </button>
+        </Link>
       </div>
 
       <div className="mt-8 mb-4 text-center">

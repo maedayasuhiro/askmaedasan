@@ -6,7 +6,8 @@ import { getAllPosts } from "../../lib/posts";
 export default function RecipesPage({ posts }) {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-center mb-6">🍚 Japanese Food Recipes</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">🍙 Japanese Food Recipes</h1>
+
       <div className="max-w-3xl mx-auto space-y-6">
         {posts.map((post) => (
           <div key={post.slug} className="bg-white p-6 rounded-xl shadow-md">
@@ -25,13 +26,14 @@ export default function RecipesPage({ posts }) {
   );
 }
 
+// ⬇️ ここから下を追記（カテゴリ＝recipes の記事だけ取得）
 export async function getStaticProps() {
   const allPosts = getAllPosts();
-  const filteredPosts = allPosts.filter((post) => post.category === "recipes");
+  const recipesOnly = allPosts.filter((post) => post.category === "recipes");
 
   return {
     props: {
-      posts: filteredPosts,
+      posts: recipesOnly,
     },
   };
 }

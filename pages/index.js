@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -59,21 +60,19 @@ export default function HomePage() {
         </div>
       </div>
 
-    import Link from "next/link"; // まだなければ追加
+      <div className="mt-8">
+        <Link href="/blog">
+          <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+            Visit Our Blog
+          </button>
+        </Link>
+      </div>
 
-...
-
-<div className="mt-8">
-  <Link href="/blog">
-    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
-      Visit Our Blog
-    </button>
-  </Link>
-</div>
-
-<a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
-  Privacy Policy & Terms
-</a>
+      <div className="mt-4">
+        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+          Privacy Policy & Terms
+        </a>
+      </div>
 
       <footer className="mt-10 text-gray-600">© 2025 Ask Maeda-san. Making Japan Accessible.</footer>
     </div>

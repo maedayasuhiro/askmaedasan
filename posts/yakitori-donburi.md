@@ -2,6 +2,7 @@
 title: "Under £10 Juicy Yakitori Donburi (焼き鳥丼)"
 date: "2025-03-24"
 category: "recipes"
+excerpt: "Easy & juicy Yakitori rice bowl under £10!"
 ---
 
 ## **Under £10 Juicy Yakitori Donburi (焼き鳥丼)**  

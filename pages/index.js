@@ -85,18 +85,18 @@ export default function HomePage({ latestPosts }) {
         </div>
       </div>
 
-      <div className="mt-8">
-        <Link href="/blog">
-          <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
-            Visit Our Blog
-          </button>
-        </Link>
-      </div>
+<div className="mt-8 mb-4 text-center">
+  <Link href="/blog">
+    <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+      Visit Our Blog
+    </button>
+  </Link>
+</div>
 
-      <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
-        Privacy Policy & Terms
-      </a>
-
+<div className="mb-6 text-center">
+  <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+    Privacy Policy & Terms
+  </a>
       <footer className="mt-10 text-gray-600">© 2025 Ask Maeda-san. Making Japan Accessible.</footer>
     </div>
   );

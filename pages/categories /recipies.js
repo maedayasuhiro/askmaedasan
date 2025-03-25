@@ -1,7 +1,7 @@
 // pages/categories/recipes.js
 import React from "react";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts } from "../../lib/posts";
 
 export default function RecipesPage({ posts }) {
   return (

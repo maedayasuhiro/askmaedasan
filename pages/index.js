@@ -11,27 +11,34 @@ export async function getStaticProps() {
 
 export default function HomePage({ posts }) {
   return (
-    <div className="min-h-screen bg-japan-pattern bg-cover bg-center font-japanese text-gray-900">
-      <header className="sticky top-0 z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-md py-4">
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-indigo-900">
-          Ask Maeda-san - Your Private Japanese Concierge
-        </h1>
-        <p className="text-center text-indigo-700 text-sm md:text-base mt-2">
-          Local Japanese staff will fulfill your request directly in Japan.
-        </p>
-      </header>
+    <div
+      className="min-h-screen bg-cover bg-center text-gray-900"
+      style={{ backgroundImage: "url('/bg-japan.jpg')" }}
+    >
+      <div className="bg-white bg-opacity-90 min-h-screen px-4 md:px-8 py-8 md:py-16">
+        <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full">
+          <h1 className="text-2xl md:text-4xl font-bold text-center text-purple-800">
+            Ask Maeda-san - Your Private Japanese Concierge
+          </h1>
+        </header>
 
-      <div className="p-4 md:p-10 flex flex-col items-center">
+        <p className="text-md md:text-lg mb-6 text-center max-w-xl mx-auto">
+          Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
+          <br />
+          <strong className="text-purple-700">Local Japanese staff will fulfill your request directly in Japan.</strong>
+        </p>
+
+        {/* Language Switch Buttons */}
         <div className="mb-6 flex flex-wrap justify-center gap-2">
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-indigo-100">English</button>
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-indigo-100">日本語</button>
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-indigo-100">Español</button>
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-indigo-100">Français</button>
+          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">English</button>
+          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">日本語</button>
+          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Español</button>
+          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Français</button>
         </div>
 
-        <section className="bg-white bg-opacity-80 p-6 rounded-xl shadow-md max-w-3xl w-full mb-10">
+        <section className="mb-10 max-w-3xl w-full mx-auto">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">How It Works</h2>
-          <ol className="list-decimal list-inside text-sm md:text-base">
+          <ol className="list-decimal list-inside bg-white p-6 rounded-xl shadow-md text-sm md:text-base">
             <li>You submit a request via the form</li>
             <li>Maeda-san (Admin) replies by email shortly</li>
             <li>Details confirmed and payment completed</li>
@@ -41,49 +48,50 @@ export default function HomePage({ posts }) {
           </ol>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-2 max-w-4xl w-full mb-10">
-          <div className="bg-white bg-opacity-80 p-6 rounded-xl shadow-xl">
-            <h2 className="text-xl font-semibold mb-4">Product Purchase Request</h2>
+        <section className="grid gap-6 md:grid-cols-2 max-w-4xl w-full mx-auto mb-10">
+          <div className="bg-white p-6 rounded-xl shadow-xl">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4">Product Purchase Request</h2>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbCiEd5_AhNMNpdfjeIHxR7iIaVBtzjJUxA5lESqveBS96KQ/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>
           </div>
-          <div className="bg-white bg-opacity-80 p-6 rounded-xl shadow-xl">
-            <h2 className="text-xl font-semibold mb-4">Consultation Request</h2>
+
+          <div className="bg-white p-6 rounded-xl shadow-xl">
+            <h2 className="text-xl md:text-2xl font-semibold mb-4">Consultation Request</h2>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>
           </div>
         </section>
 
-        <section className="max-w-3xl w-full mb-10">
+        <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">Customer Reviews</h2>
           <div className="space-y-6 text-sm md:text-base">
-            <div className="bg-white bg-opacity-80 p-4 rounded shadow-md">
+            <div className="bg-white p-4 rounded shadow-md">
               <p className="mb-2">★★★★★</p>
               <p className="font-semibold">Customer: Emily</p>
               <p className="italic mb-2">Request: Japanese Product Delivery</p>
-              <p>I am a textile artist and wanted to order washi paper yarn from Japan. They even sent me snacks!</p>
+              <p>I am a textile artist and wanted to order washi paper yarn from Japan. Thanks to Ask Maeda-san, I was able to get materials only available locally. They even sent me some Japanese snacks along with it.</p>
             </div>
-            <div className="bg-white bg-opacity-80 p-4 rounded shadow-md">
+            <div className="bg-white p-4 rounded shadow-md">
               <p className="mb-2">★★★★★</p>
               <p className="font-semibold">Customer: Camy</p>
               <p className="italic mb-2">Request: Zoom Meeting</p>
-              <p>Thanks to Maeda-san, I got local insights and advice about studying and living in Japan.</p>
+              <p>I’m planning to study in Japan and wanted to chat with a local. I learned a lot about job hunting and sightseeing tips. Thank you!</p>
             </div>
-            <div className="bg-white bg-opacity-80 p-4 rounded shadow-md">
+            <div className="bg-white p-4 rounded shadow-md">
               <p className="mb-2">★★★★★</p>
               <p className="font-semibold">Customer: David</p>
               <p className="italic mb-2">Request: Local Tour Guide</p>
-              <p>I was guided to hidden izakayas and experienced real Japan with Kohei-san.</p>
+              <p>I wanted to explore Japan with a local guide. Kohei took me to his favorite izakaya and restaurants. Thank you, Kohei!</p>
             </div>
           </div>
         </section>
 
-        <section className="max-w-3xl w-full mb-10">
+        <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">Latest Blog Posts</h2>
           {posts.map((post) => (
-            <div key={post.slug} className="bg-white bg-opacity-80 p-4 rounded shadow-md mb-4">
-              <h3 className="text-lg font-semibold text-indigo-800">{post.title}</h3>
+            <div key={post.slug} className="bg-white p-4 rounded shadow-md mb-4">
+              <h3 className="text-lg font-semibold text-purple-800">{post.title}</h3>
               <p className="text-gray-600 text-sm">{post.date}</p>
               <p>{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} className="text-blue-600 underline">Read More</Link>
+              <Link href={`/blog/${post.slug}`} className="text-blue-500 underline">Read More</Link>
             </div>
           ))}
         </section>
@@ -107,9 +115,7 @@ export default function HomePage({ posts }) {
           </a>
         </div>
 
-        <footer className="mt-10 text-gray-600 text-center text-sm">
-          © 2025 Ask Maeda-san. Making Japan Accessible.
-        </footer>
+        <footer className="mt-10 text-gray-600 text-center text-sm">© 2025 Ask Maeda-san. Making Japan Accessible.</footer>
       </div>
     </div>
   );

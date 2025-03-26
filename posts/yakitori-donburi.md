@@ -12,7 +12,7 @@ Chicken & Rice Bowl with Sweet Soy Glaze
 
 ### Instagram Video:
 
-<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHjncaqNnok/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHjncaqNnok/" data-instgrm-version="14"></blockquote>
 
 ---
 

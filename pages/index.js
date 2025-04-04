@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 
@@ -10,6 +10,13 @@ export async function getStaticProps() {
 }
 
 export default function HomePage({ posts }) {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div
       className="min-h-screen bg-cover bg-center text-gray-900"
@@ -36,6 +43,17 @@ export default function HomePage({ posts }) {
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">日本語</button>
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Español</button>
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Français</button>
+        </div>
+
+        {/* 検索ボックス */}
+        <div className="mb-10 max-w-xl mx-auto">
+          <input
+            type="text"
+            placeholder="Search blog posts..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
+          />
         </div>
 
         <section className="mb-10 max-w-3xl w-full mx-auto">
@@ -88,7 +106,7 @@ export default function HomePage({ posts }) {
 
         <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">Latest Blog Posts</h2>
-          {posts.map((post) => (
+          {filteredPosts.map((post) => (
             <div key={post.slug} className="bg-white p-4 rounded shadow-md mb-4">
               <h3 className="text-lg font-semibold text-purple-800">{post.title}</h3>
               <p className="text-gray-600 text-sm">{post.date}</p>

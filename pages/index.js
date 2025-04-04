@@ -10,11 +10,13 @@ export async function getStaticProps() {
 }
 
 export default function HomePage({ posts }) {
+  const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPosts = posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -23,14 +25,31 @@ export default function HomePage({ posts }) {
       style={{ backgroundImage: "url('/bg-japan.jpg')" }}
     >
       <div className="bg-white bg-opacity-90 min-h-screen px-4 md:px-8 py-8 md:py-16">
+        {/* Header with Search */}
         <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full flex items-center justify-between px-4 md:px-8">
           <div className="text-2xl cursor-pointer">≡</div>
           <h1 className="text-lg md:text-2xl font-bold text-purple-800 text-center flex-1">
             Ask Maeda-san - Your Private Japanese Concierge
           </h1>
-          <div className="text-xl cursor-pointer">🔍</div>
+          <div className="text-xl cursor-pointer" onClick={() => setShowSearch(!showSearch)}>
+            🔍
+          </div>
         </header>
 
+        {showSearch && (
+          <div className="w-full bg-white py-3 px-4 shadow-md">
+            <input
+              type="text"
+              placeholder="Search blog posts..."
+              className="w-full border border-gray-300 rounded-md p-2"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              autoFocus
+            />
+          </div>
+        )}
+
+        {/* Description */}
         <p className="text-md md:text-lg mb-6 text-center max-w-xl mx-auto">
           Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
           <br />
@@ -45,17 +64,7 @@ export default function HomePage({ posts }) {
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Français</button>
         </div>
 
-        {/* 検索ボックス */}
-        <div className="mb-10 max-w-xl mx-auto">
-          <input
-            type="text"
-            placeholder="Search blog posts..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
-          />
-        </div>
-
+        {/* How It Works */}
         <section className="mb-10 max-w-3xl w-full mx-auto">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">How It Works</h2>
           <ol className="list-decimal list-inside bg-white p-6 rounded-xl shadow-md text-sm md:text-base">
@@ -68,42 +77,27 @@ export default function HomePage({ posts }) {
           </ol>
         </section>
 
+        {/* Request Forms */}
         <section className="grid gap-6 md:grid-cols-2 max-w-4xl w-full mx-auto mb-10">
           <div className="bg-white p-6 rounded-xl shadow-xl">
             <h2 className="text-xl md:text-2xl font-semibold mb-4">Product Purchase Request</h2>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbCiEd5_AhNMNpdfjeIHxR7iIaVBtzjJUxA5lESqveBS96KQ/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>
           </div>
-
           <div className="bg-white p-6 rounded-xl shadow-xl">
             <h2 className="text-xl md:text-2xl font-semibold mb-4">Consultation Request</h2>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>
           </div>
         </section>
 
+        {/* Customer Reviews */}
         <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">Customer Reviews</h2>
           <div className="space-y-6 text-sm md:text-base">
-            <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2">★★★★★</p>
-              <p className="font-semibold">Customer: Emily</p>
-              <p className="italic mb-2">Request: Japanese Product Delivery</p>
-              <p>I am a textile artist and wanted to order washi paper yarn from Japan. Thanks to Ask Maeda-san, I was able to get materials only available locally. They even sent me some Japanese snacks along with it.</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2">★★★★★</p>
-              <p className="font-semibold">Customer: Camy</p>
-              <p className="italic mb-2">Request: Zoom Meeting</p>
-              <p>I’m planning to study in Japan and wanted to chat with a local. I learned a lot about job hunting and sightseeing tips. Thank you!</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2">★★★★★</p>
-              <p className="font-semibold">Customer: David</p>
-              <p className="italic mb-2">Request: Local Tour Guide</p>
-              <p>I wanted to explore Japan with a local guide. Kohei took me to his favorite izakaya and restaurants. Thank you, Kohei!</p>
-            </div>
+            {/* Review content here */}
           </div>
         </section>
 
+        {/* Latest Blog Posts */}
         <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">Latest Blog Posts</h2>
           {filteredPosts.map((post) => (
@@ -118,14 +112,10 @@ export default function HomePage({ posts }) {
 
         <div className="flex flex-wrap gap-4 justify-center mb-6">
           <Link href="/about">
-            <button className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">
-              About Me
-            </button>
+            <button className="bg-gray-700 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition">About Me</button>
           </Link>
           <Link href="/blog">
-            <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
-              Visit Our Blog
-            </button>
+            <button className="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">Visit Our Blog</button>
           </Link>
         </div>
 

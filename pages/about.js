@@ -10,7 +10,7 @@ export default function AboutPage() {
       </h1>
 
       {/* スライドショー */}
-      <div className="max-w-xl mx-auto mb-10">
+      <div className="max-w-md mx-auto mb-10">
         <Carousel
           autoPlay
           infiniteLoop
@@ -20,19 +20,19 @@ export default function AboutPage() {
           interval={3000}
         >
           <div>
-            <img src="/IMG_7524.jpeg" alt="Photo 1" />
+            <img src="/IMG_7524.jpeg" alt="Photo 1" className="rounded-xl object-cover h-64 w-full" />
           </div>
           <div>
-            <img src="/IMG_9175.jpeg" alt="Photo 2" />
+            <img src="/IMG_9175.jpeg" alt="Photo 2" className="rounded-xl object-cover h-64 w-full" />
           </div>
           <div>
-            <img src="/IMG_5137.jpeg" alt="Photo 3" />
+            <img src="/IMG_5137.jpeg" alt="Photo 3" className="rounded-xl object-cover h-64 w-full" />
           </div>
           <div>
-            <img src="/IMG_2772.jpeg" alt="Photo 4" />
+            <img src="/IMG_2772.jpeg" alt="Photo 4" className="rounded-xl object-cover h-64 w-full" />
           </div>
           <div>
-            <img src="/IMG_2319.jpeg" alt="Photo 5" />
+            <img src="/IMG_2319.jpeg" alt="Photo 5" className="rounded-xl object-cover h-64 w-full" />
           </div>
         </Carousel>
       </div>

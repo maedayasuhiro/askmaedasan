@@ -12,6 +12,7 @@ export async function getStaticProps() {
 export default function HomePage({ posts }) {
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const filteredPosts = posts.filter(
     (post) =>
@@ -25,9 +26,24 @@ export default function HomePage({ posts }) {
       style={{ backgroundImage: "url('/bg-japan.jpg')" }}
     >
       <div className="bg-white bg-opacity-90 min-h-screen px-4 md:px-8 py-8 md:py-16">
-        {/* Header with Search */}
+        {/* Header with Hamburger & Search */}
         <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full flex items-center justify-between px-4 md:px-8">
-          <div className="text-2xl cursor-pointer">≡</div>
+          <div className="relative">
+            <button
+              className="text-2xl cursor-pointer"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              ≡
+            </button>
+            {menuOpen && (
+              <div className="absolute top-12 left-0 bg-white border rounded shadow-md w-48 z-50">
+                <Link href="/" className="block px-4 py-2 hover:bg-gray-100">Home</Link>
+                <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">About Me</Link>
+                <Link href="/blog" className="block px-4 py-2 hover:bg-gray-100">Blog</Link>
+                <Link href="/privacy" className="block px-4 py-2 hover:bg-gray-100">Privacy Policy</Link>
+              </div>
+            )}
+          </div>
           <h1 className="text-lg md:text-2xl font-bold text-purple-800 text-center flex-1">
             Ask Maeda-san - Your Private Japanese Concierge
           </h1>
@@ -78,7 +94,7 @@ export default function HomePage({ posts }) {
         </section>
 
         {/* Request Forms */}
-        <section className="grid gap-6 md:grid-cols-2 max-w-4xl w-full mx-auto mb-10">
+        <section className="grid gap-6 max-w-2xl w-full mx-auto mb-10">
           <div className="bg-white p-6 rounded-xl shadow-xl">
             <h2 className="text-xl md:text-2xl font-semibold mb-4">Consultation Request</h2>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>

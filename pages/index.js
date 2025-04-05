@@ -59,7 +59,7 @@ export default function HomePage({ posts }) {
         )}
 
         {/* Description */}
-        <p className="text-md md:text-lg mb-6 text-center max-w-xl mx-auto">
+        <p className="text-md md:text-lg mt-4 mb-6 text-center max-w-xl mx-auto">
           Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
           <br />
           <strong className="text-pink-600">Local Japanese staff will fulfill your request directly in Japan.</strong>

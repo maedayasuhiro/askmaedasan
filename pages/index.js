@@ -80,10 +80,6 @@ export default function HomePage({ posts }) {
         {/* Request Forms */}
         <section className="grid gap-6 md:grid-cols-2 max-w-4xl w-full mx-auto mb-10">
           <div className="bg-white p-6 rounded-xl shadow-xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4">Product Purchase Request</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdbCiEd5_AhNMNpdfjeIHxR7iIaVBtzjJUxA5lESqveBS96KQ/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-xl">
             <h2 className="text-xl md:text-2xl font-semibold mb-4">Consultation Request</h2>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>
           </div>

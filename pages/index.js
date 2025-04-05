@@ -94,12 +94,24 @@ export default function HomePage({ posts }) {
         </section>
 
         {/* Request Forms */}
-        <section className="grid gap-6 max-w-2xl w-full mx-auto mb-10">
-          <div className="bg-white p-6 rounded-xl shadow-xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4">Consultation Request</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true" width="100%" height="700" frameBorder="0">Loading…</iframe>
-          </div>
-        </section>
+{/* Consultation Request - Centered & Smaller */}
+<section className="max-w-md w-full mx-auto mb-10">
+  <div className="bg-white p-6 rounded-xl shadow-xl">
+    <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center">
+      Consultation Request
+    </h2>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true"
+      width="100%"
+      height="600"
+      frameBorder="0"
+      marginHeight="0"
+      marginWidth="0"
+    >
+      Loading…
+    </iframe>
+  </div>
+</section>
 
         {/* Customer Reviews */}
         <section className="max-w-3xl w-full mx-auto mb-10">

@@ -24,7 +24,7 @@ export default function HomePage({ posts }) {
       className="min-h-screen bg-cover bg-center text-gray-900"
       style={{ backgroundImage: "url('/bg-japan.jpg')" }}
     >
-      <div className="bg-white bg-opacity-50 min-h-screen px-4 md:px-8 py-8 md:py-16">
+      <div className="bg-white bg-opacity-60 min-h-screen px-4 md:px-8 py-8 md:py-16">
         {/* Header with Menu & Search */}
         <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full flex items-center justify-between px-4 md:px-8">
           <div className="relative">

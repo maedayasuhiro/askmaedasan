@@ -9,7 +9,7 @@ export default function AboutPage() {
         About Me - Yasuhiro Maeda
       </h1>
 
-      {/* スライドショー */}
+      {/* スライドショー（縦写真対応） */}
       <div className="max-w-md mx-auto mb-10">
         <Carousel
           autoPlay
@@ -19,21 +19,15 @@ export default function AboutPage() {
           showIndicators={true}
           interval={3000}
         >
-          <div>
-            <img src="/IMG_7524.jpeg" alt="Photo 1" className="rounded-xl object-cover h-64 w-full" />
-          </div>
-          <div>
-            <img src="/IMG_9175.jpeg" alt="Photo 2" className="rounded-xl object-cover h-64 w-full" />
-          </div>
-          <div>
-            <img src="/IMG_5137.jpeg" alt="Photo 3" className="rounded-xl object-cover h-64 w-full" />
-          </div>
-          <div>
-            <img src="/IMG_2772.jpeg" alt="Photo 4" className="rounded-xl object-cover h-64 w-full" />
-          </div>
-          <div>
-            <img src="/IMG_2319.jpeg" alt="Photo 5" className="rounded-xl object-cover h-64 w-full" />
-          </div>
+          {["IMG_7524.jpeg", "IMG_9175.jpeg", "IMG_5137.jpeg", "IMG_2772.jpeg", "IMG_2319.jpeg"].map((img, i) => (
+            <div key={i}>
+              <img
+                src={`/${img}`}
+                alt={`Photo ${i + 1}`}
+                className="h-[400px] object-contain mx-auto"
+              />
+            </div>
+          ))}
         </Carousel>
       </div>
 
@@ -41,13 +35,14 @@ export default function AboutPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-2">Who I Am</h2>
           <p>
-            My name is <strong>Yasuhiro Maeda</strong>, born in 1999 in Osaka, Japan. I studied Commerce at <strong>Doshisha University</strong> in Kyoto and spent one year studying Business at <strong>Aix-Marseille University</strong> in France as an exchange student.
+            My name is <strong>Yasuhiro Maeda</strong>, born in 1999 in Osaka, Japan.
+            I studied Commerce at <strong>Doshisha University</strong> in Kyoto and spent one year studying Business at <strong>Aix-Marseille University</strong> in France as an exchange student.
           </p>
           <p>
             After graduating, I worked at <strong>Rakuten Group, Inc.</strong> as an advertising sales consultant, supporting national brands with digital marketing.
           </p>
           <p>
-            I am currently living in <strong>Glasgow, Scotland</strong>, working in IT sales for Scottish local company.
+            I am currently living in <strong>Glasgow, Scotland</strong>, working in IT sales for a local company.
           </p>
         </section>
 

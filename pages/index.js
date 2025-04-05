@@ -12,6 +12,7 @@ export async function getStaticProps() {
 export default function HomePage({ posts }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -24,12 +25,10 @@ export default function HomePage({ posts }) {
       style={{ backgroundImage: "url('/bg-japan.jpg')" }}
     >
       <div className="bg-white bg-opacity-90 min-h-screen px-4 md:px-8 py-8 md:py-16">
-        {/* Header with Menu */}
+        {/* Header with Menu & Search */}
         <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full flex items-center justify-between px-4 md:px-8">
           <div className="relative">
-            <button className="text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
-              ≡
-            </button>
+            <button className="text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>≡</button>
             {menuOpen && (
               <div className="absolute mt-2 bg-white shadow-md rounded-lg w-40">
                 <Link href="/" className="block px-4 py-2 hover:bg-gray-100">Home</Link>
@@ -44,8 +43,20 @@ export default function HomePage({ posts }) {
             Ask Maeda-san - Your Private Japanese Concierge
           </h1>
 
-          <div className="text-xl">🔍</div>
+          <div className="text-xl cursor-pointer" onClick={() => setShowSearch(!showSearch)}>🔍</div>
         </header>
+
+        {showSearch && (
+          <div className="mb-6 max-w-xl mx-auto">
+            <input
+              type="text"
+              placeholder="Search blog posts..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
+            />
+          </div>
+        )}
 
         {/* Description */}
         <p className="text-md md:text-lg mb-6 text-center max-w-xl mx-auto">
@@ -60,17 +71,6 @@ export default function HomePage({ posts }) {
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">日本語</button>
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Español</button>
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Français</button>
-        </div>
-
-        {/* Search Box */}
-        <div className="mb-10 max-w-xl mx-auto">
-          <input
-            type="text"
-            placeholder="Search blog posts..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm"
-          />
         </div>
 
         {/* How It Works */}

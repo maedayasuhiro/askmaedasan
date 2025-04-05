@@ -63,26 +63,37 @@ export default function AboutPage() {
           </p>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Follow Me</h2>
-          <ul className="space-y-2">
-            <li>
-              <a href="https://www.instagram.com/cooking_japanese_in_the_uk?igsh=dzd6Y2d0ODg5b3Jq&utm_source=qr" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-                Instagram: @cooking_japanese_in_the_uk
-              </a>
-            </li>
-            <li>
-              <a href="https://www.tiktok.com/@maedayasuhiro0?_t=ZN-8uz0CeFyGeM&_r=1" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-                TikTok: @maedayasuhiro0
-              </a>
-            </li>
-            <li>
-              <a href="https://youtube.com/@yasuhiromaeda_uk?si=uyLihPeQJLFNT_BN" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-                YouTube: @yasuhiromaeda_uk
-              </a>
-            </li>
-          </ul>
-        </section>
+      <section>
+  <h2 className="text-2xl font-semibold mb-4 text-center text-pink-600">Follow Me</h2>
+  <div className="flex flex-col gap-4">
+    <a
+      href="https://www.instagram.com/cooking_japanese_in_the_uk?igsh=dzd6Y2d0ODg5b3Jq&utm_source=qr"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-pink-100 hover:bg-pink-200 text-pink-800 text-center font-semibold py-3 px-4 rounded-lg shadow transition duration-300"
+    >
+      Instagram: @cooking_japanese_in_the_uk
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@maedayasuhiro0?_t=ZN-8uz0CeFyGeM&_r=1"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-gray-900 hover:bg-gray-800 text-white text-center font-semibold py-3 px-4 rounded-lg shadow transition duration-300"
+    >
+      TikTok: @maedayasuhiro0
+    </a>
+
+    <a
+      href="https://youtube.com/@yasuhiromaeda_uk?si=uyLihPeQJLFNT_BN"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-red-100 hover:bg-red-200 text-red-700 text-center font-semibold py-3 px-4 rounded-lg shadow transition duration-300"
+    >
+      YouTube: @yasuhiromaeda_uk
+    </a>
+  </div>
+</section>
       </div>
     </div>
   );

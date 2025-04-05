@@ -23,7 +23,7 @@ export default function AboutPage() {
             <img src="/IMG_7524.jpeg" alt="Photo 1" />
           </div>
           <div>
-            <img src="/IMG_7714.jpeg" alt="Photo 2" />
+            <img src="/IMG_9175.jpeg" alt="Photo 2" />
           </div>
           <div>
             <img src="/IMG_5137.jpeg" alt="Photo 3" />

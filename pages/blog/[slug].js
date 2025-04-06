@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Head from "next/head"; // ← 追加
 import { getAllPosts } from "../../lib/posts";
 import fs from "fs";
 import path from "path";
@@ -33,7 +34,6 @@ export async function getStaticProps({ params }) {
 
 export default function BlogPost({ title, date, category, content }) {
   useEffect(() => {
-    // Instagram埋め込みが読み込まれているか確認し、再レンダリング処理
     if (typeof window !== "undefined" && window.instgrm) {
       window.instgrm.Embeds.process();
     }
@@ -41,6 +41,11 @@ export default function BlogPost({ title, date, category, content }) {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
+      {/* Instagram埋め込みscriptの読み込み */}
+      <Head>
+        <script async src="https://www.instagram.com/embed.js"></script>
+      </Head>
+
       <h1 className="text-4xl font-bold mb-4">{title}</h1>
       <p className="text-gray-600 mb-2">{date}</p>
       <p className="mb-6">Category: {category}</p>

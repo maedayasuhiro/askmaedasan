@@ -1,5 +1,5 @@
 ---
-title: "Under £10 Golden Japanese Fried Chicken (Karaage)"
+title: "Under £10 Golden Japanese Fried Chicken (唐揚げ)"
 date: "2025-04-06"
 category: "recipes"
 excerpt: "Crispy, juicy Japanese fried chicken for under £10!"

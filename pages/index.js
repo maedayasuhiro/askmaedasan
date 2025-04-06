@@ -42,14 +42,14 @@ export default function HomePage({ posts }) {
             )}
           </div>
 
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-2">
-            <Link href="/" className="flex flex-col items-center space-y-1">
-              <img src="/logo.png" alt="Logo" className="h-10 w-auto md:h-12" />
-              <div className="text-2xl md:text-4xl font-extrabold text-vermilion leading-tight">
-                Ask Maeda-san
-              </div>
-            </Link>
-          </div>
+<div className="flex-1 flex items-center justify-center text-center px-2">
+  <Link href="/" className="flex items-center space-x-2">
+    <img src="/logo.png" alt="Logo" className="h-10 w-auto md:h-12" />
+    <div className="text-2xl md:text-4xl font-extrabold text-vermilion leading-tight">
+      Ask Maeda-san
+    </div>
+  </Link>
+</div>
 
           <div className="text-xl cursor-pointer" onClick={() => setShowSearch(!showSearch)}>
             🔍

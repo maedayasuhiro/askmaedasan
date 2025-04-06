@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* ファビコン */}
-        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
         {/* ブラウザのテーマカラー（オプション） */}
         <meta name="theme-color" content="#E34234" />

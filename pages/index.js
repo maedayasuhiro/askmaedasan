@@ -127,7 +127,7 @@ export default function HomePage({ posts }) {
               request: "Japanese Product Delivery",
               message: "I am a textile artist and wanted to order washi paper yarn from Japan..."
             }, {
-              name: "Camy",
+              name: "Cameron",
               request: "Zoom Meeting",
               message: "I’m planning to study in Japan and wanted to chat with a local..."
             }, {

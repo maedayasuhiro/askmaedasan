@@ -24,7 +24,7 @@ export default function BlogHomePage({ allPosts }) {
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
         {/* Japanese Food Recipes */}
         <Link href="/categories/recipes" className="relative block rounded-xl shadow-xl overflow-hidden group h-48">
-          <img src="/japanese-food.png.PNG" alt="Japanese Food" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <img src="/japanese-food.png" alt="Japanese Food" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-6">
             <h2 className="text-2xl font-semibold mb-2">Japanese Food Recipes</h2>
             <p>Authentic recipes you can try at home!</p>
@@ -33,7 +33,7 @@ export default function BlogHomePage({ allPosts }) {
 
         {/* Japanese Tourist Spots */}
         <Link href="/categories/sightseeing" className="relative block rounded-xl shadow-xl overflow-hidden group h-48">
-          <img src="/tourism.png.PNG" alt="Japanese Tourist Spots" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <img src="/tourism.png" alt="Japanese Tourist Spots" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-6">
             <h2 className="text-2xl font-semibold mb-2">Japanese Tourist Spots</h2>
             <p>Explore must-see locations in Japan.</p>
@@ -42,7 +42,7 @@ export default function BlogHomePage({ allPosts }) {
 
         {/* Japanese Product Introductions */}
         <Link href="/categories/products" className="relative block rounded-xl shadow-xl overflow-hidden group h-48">
-          <img src="/product.png.PNG" alt="Japanese Products" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <img src="/product.png" alt="Japanese Products" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-6">
             <h2 className="text-2xl font-semibold mb-2">Japanese Product Introductions</h2>
             <p>Learn about unique Japanese goods.</p>
@@ -51,7 +51,7 @@ export default function BlogHomePage({ allPosts }) {
 
         {/* Maeda-san's Personal Blog */}
         <Link href="/categories/maeda-blog" className="relative block rounded-xl shadow-xl overflow-hidden group h-48">
-          <img src="/blog.png.PNG" alt="Maeda Blog" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <img src="/blog.png" alt="Maeda Blog" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-6">
             <h2 className="text-2xl font-semibold mb-2">Maeda-san's Personal Blog</h2>
             <p>Insights, stories, and more from Maeda-san.</p>

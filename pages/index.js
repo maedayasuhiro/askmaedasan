@@ -42,13 +42,14 @@ export default function HomePage({ posts }) {
           </div>
 
           <div className="flex-1 flex justify-center items-center space-x-2">
-            <Link href="/">
-              <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
-            </Link>
-            <h1 className="text-lg md:text-2xl font-bold text-vermilion text-center">
-              Ask Maeda-san ~Your Private Japanese Concierge~ 
-            </h1>
-          </div>
+  <Link href="/">
+    <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+  </Link>
+  <h1 className="text-lg md:text-2xl font-bold text-vermilion text-center leading-snug">
+    Ask Maeda-san <br className="block md:hidden" />
+    ~Your Private Japanese Concierge~
+  </h1>
+</div>
 
           <div className="text-xl cursor-pointer" onClick={() => setShowSearch(!showSearch)}>
             🔍

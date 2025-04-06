@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://askmaedasan.com/$1",
+      "permanent": true
+    }
+  ]
+}

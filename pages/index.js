@@ -26,7 +26,7 @@ export default function HomePage({ posts }) {
       style={{ backgroundImage: "url('/bg-japan.jpg')" }}
     >
       <div className="bg-white bg-opacity-60 min-h-screen px-4 md:px-8 py-8 md:py-16">
-        {/* Header with Menu & Search */}
+        {/* Header */}
         <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full flex items-center justify-between px-4 md:px-8">
           <div className="relative">
             <button className="text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
@@ -43,10 +43,10 @@ export default function HomePage({ posts }) {
           </div>
 
           <div className="flex-1 flex flex-col items-center justify-center text-center px-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <img src="/logo.png" alt="Logo" className="h-8 w-auto md:h-10" />
-              <div className="text-sm md:text-lg font-bold text-vermilion leading-tight">
-                Ask Maeda-san<br className="block md:hidden" />
+            <Link href="/" className="flex flex-col items-center space-y-1">
+              <img src="/logo.png" alt="Logo" className="h-10 w-auto md:h-12" />
+              <div className="text-2xl md:text-4xl font-extrabold text-vermilion leading-tight">
+                Ask Maeda-san
               </div>
             </Link>
           </div>
@@ -68,21 +68,21 @@ export default function HomePage({ posts }) {
           </div>
         )}
 
-{/* Description */}
-<div className="text-center max-w-xl mx-auto mb-6">
-  <h2 className="text-2xl md:text-3xl font-bold text-vermilion mb-4">
-    Your Private Japanese Concierge
-  </h2>
-  <p className="text-md md:text-lg">
-    Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
-    <br />
-    <strong className="text-vermilion">
-      Local Japanese staff will fulfill your request directly in Japan.
-    </strong>
-  </p>
-</div>
+        {/* Description */}
+        <div className="text-center max-w-xl mx-auto mb-6 mt-6">
+          <h2 className="text-lg md:text-xl font-semibold text-vermilion mb-4">
+            Your Private Japanese Concierge
+          </h2>
+          <p className="text-md md:text-lg">
+            Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
+            <br />
+            <strong className="text-vermilion">
+              Local Japanese staff will fulfill your request directly in Japan.
+            </strong>
+          </p>
+        </div>
 
-        {/* Language Switch Buttons */}
+        {/* Language Switch */}
         <div className="mb-6 flex flex-wrap justify-center gap-2">
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">English</button>
           <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">日本語</button>
@@ -103,7 +103,7 @@ export default function HomePage({ posts }) {
           </ol>
         </section>
 
-        {/* Consultation Request */}
+        {/* Consultation Form */}
         <section className="max-w-md w-full mx-auto mb-10">
           <div className="bg-white p-6 rounded-xl shadow-xl">
             <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">Consultation Request</h2>
@@ -118,7 +118,7 @@ export default function HomePage({ posts }) {
           </div>
         </section>
 
-        {/* Customer Reviews */}
+        {/* Reviews */}
         <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">Customer Reviews</h2>
           <div className="space-y-6 text-sm md:text-base">
@@ -145,7 +145,7 @@ export default function HomePage({ posts }) {
           </div>
         </section>
 
-        {/* Latest Blog Posts */}
+        {/* Blog */}
         <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">Latest Blog Posts</h2>
           {filteredPosts.map((post) => (
@@ -158,7 +158,7 @@ export default function HomePage({ posts }) {
           ))}
         </section>
 
-        {/* Footer Links */}
+        {/* Footer */}
         <div className="flex flex-wrap gap-4 justify-center mb-6">
           <Link href="/about">
             <button className="bg-vermilion text-white px-6 py-3 rounded-lg hover:bg-opacity-80 transition">About Me</button>

@@ -28,7 +28,9 @@ export default function HomePage({ posts }) {
         {/* Header with Menu & Search */}
         <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full flex items-center justify-between px-4 md:px-8">
           <div className="relative">
-            <button className="text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>≡</button>
+            <button className="text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
+              ≡
+            </button>
             {menuOpen && (
               <div className="absolute mt-2 bg-white shadow-md rounded-lg w-40">
                 <Link href="/" className="block px-4 py-2 hover:bg-gray-100">Home</Link>
@@ -39,11 +41,18 @@ export default function HomePage({ posts }) {
             )}
           </div>
 
-          <h1 className="text-lg md:text-2xl font-bold text-vermilion text-center flex-1">
-            Ask Maeda-san - Your Private Japanese Concierge
-          </h1>
+          <div className="flex-1 flex justify-center items-center space-x-2">
+            <Link href="/">
+              <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+            </Link>
+            <h1 className="text-lg md:text-2xl font-bold text-vermilion text-center">
+              Ask Maeda-san
+            </h1>
+          </div>
 
-          <div className="text-xl cursor-pointer" onClick={() => setShowSearch(!showSearch)}>🔍</div>
+          <div className="text-xl cursor-pointer" onClick={() => setShowSearch(!showSearch)}>
+            🔍
+          </div>
         </header>
 
         {showSearch && (
@@ -105,24 +114,26 @@ export default function HomePage({ posts }) {
         <section className="max-w-3xl w-full mx-auto mb-10">
           <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">Customer Reviews</h2>
           <div className="space-y-6 text-sm md:text-base">
-            <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2 text-vermilion">★★★★★</p>
-              <p className="font-semibold">Customer: Emily</p>
-              <p className="italic mb-2">Request: Japanese Product Delivery</p>
-              <p>I am a textile artist and wanted to order washi paper yarn from Japan. Thanks to Ask Maeda-san, I was able to get materials only available locally. They even sent me some Japanese snacks along with it.</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2 text-vermilion">★★★★★</p>
-              <p className="font-semibold">Customer: Camy</p>
-              <p className="italic mb-2">Request: Zoom Meeting</p>
-              <p>I’m planning to study in Japan and wanted to chat with a local. I learned a lot about job hunting and sightseeing tips. Thank you!</p>
-            </div>
-            <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2 text-vermilion">★★★★★</p>
-              <p className="font-semibold">Customer: David</p>
-              <p className="italic mb-2">Request: Local Tour Guide</p>
-              <p>I wanted to explore Japan with a local guide. Kohei took me to his favorite izakaya and restaurants. Thank you, Kohei!</p>
-            </div>
+            {[{
+              name: "Emily",
+              request: "Japanese Product Delivery",
+              message: "I am a textile artist and wanted to order washi paper yarn from Japan..."
+            }, {
+              name: "Camy",
+              request: "Zoom Meeting",
+              message: "I’m planning to study in Japan and wanted to chat with a local..."
+            }, {
+              name: "David",
+              request: "Local Tour Guide",
+              message: "I wanted to explore Japan with a local guide..."
+            }].map(({ name, request, message }, index) => (
+              <div key={index} className="bg-white p-4 rounded shadow-md">
+                <p className="mb-2 text-vermilion">★★★★★</p>
+                <p className="font-semibold">Customer: {name}</p>
+                <p className="italic mb-2">Request: {request}</p>
+                <p>{message}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -155,7 +166,9 @@ export default function HomePage({ posts }) {
           </a>
         </div>
 
-        <footer className="mt-10 text-gray-600 text-center text-sm">© 2025 Ask Maeda-san. Making Japan Accessible.</footer>
+        <footer className="mt-10 text-gray-600 text-center text-sm">
+          © 2025 Ask Maeda-san. Making Japan Accessible.
+        </footer>
       </div>
     </div>
   );

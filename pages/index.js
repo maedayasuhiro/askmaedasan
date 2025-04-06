@@ -47,7 +47,6 @@ export default function HomePage({ posts }) {
               <img src="/logo.png" alt="Logo" className="h-8 w-auto md:h-10" />
               <div className="text-sm md:text-lg font-bold text-vermilion leading-tight">
                 Ask Maeda-san<br className="block md:hidden" />
-                <span className="text-xs md:text-base block md:inline">Your Private Japanese Concierge</span>
               </div>
             </Link>
           </div>
@@ -69,12 +68,19 @@ export default function HomePage({ posts }) {
           </div>
         )}
 
-        {/* Description */}
-        <p className="text-md md:text-lg mt-4 mb-6 text-center max-w-xl mx-auto">
-          Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
-          <br />
-          <strong className="text-vermilion">Local Japanese staff will fulfill your request directly in Japan.</strong>
-        </p>
+{/* Description */}
+<div className="text-center max-w-xl mx-auto mb-6">
+  <h2 className="text-2xl md:text-3xl font-bold text-vermilion mb-4">
+    Your Private Japanese Concierge
+  </h2>
+  <p className="text-md md:text-lg">
+    Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
+    <br />
+    <strong className="text-vermilion">
+      Local Japanese staff will fulfill your request directly in Japan.
+    </strong>
+  </p>
+</div>
 
         {/* Language Switch Buttons */}
         <div className="mb-6 flex flex-wrap justify-center gap-2">

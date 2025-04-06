@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-6 md:px-20">
-      <h1 className="text-4xl font-bold mb-10 text-center text-pink-600">
+      <h1 className="text-4xl font-bold mb-10 text-center text-'#E34234'>
         About Me - Yasuhiro Maeda
       </h1>
 

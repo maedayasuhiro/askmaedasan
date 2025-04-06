@@ -14,9 +14,10 @@ export default function HomePage({ posts }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
 
-  const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPosts = posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -41,15 +42,15 @@ export default function HomePage({ posts }) {
             )}
           </div>
 
-          <div className="flex-1 flex justify-center items-center space-x-2">
-  <Link href="/">
-    <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
-  </Link>
-  <h1 className="text-lg md:text-2xl font-bold text-vermilion text-center leading-snug">
-    Ask Maeda-san <br className="block md:hidden" />
-    ~Your Private Japanese Concierge~
-  </h1>
-</div>
+          <div className="flex-1 flex flex-col items-center justify-center text-center px-2">
+            <Link href="/" className="flex items-center space-x-2">
+              <img src="/logo.png" alt="Logo" className="h-8 w-auto md:h-10" />
+              <div className="text-sm md:text-lg font-bold text-vermilion leading-tight">
+                Ask Maeda-san<br className="block md:hidden" />
+                <span className="text-xs md:text-base block md:inline">Your Private Japanese Concierge</span>
+              </div>
+            </Link>
+          </div>
 
           <div className="text-xl cursor-pointer" onClick={() => setShowSearch(!showSearch)}>
             🔍

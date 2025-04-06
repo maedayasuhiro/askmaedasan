@@ -5,7 +5,10 @@ import { Carousel } from "react-responsive-carousel";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-6 md:px-20">
-      <h1 className="text-4xl font-bold mb-10 text-center text-vermilion">
+      <h1
+        className="text-4xl font-bold mb-10 text-center"
+        style={{ color: "#E34234" }}
+      >
         About Me - Yasuhiro Maeda
       </h1>
 
@@ -39,7 +42,9 @@ export default function AboutPage() {
 
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg space-y-6">
         <section>
-          <h2 className="text-2xl font-semibold mb-2 text-vermilion">Who I Am</h2>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: "#E34234" }}>
+            Who I Am
+          </h2>
           <p>
             My name is <strong>Yasuhiro Maeda</strong>, born in 1999 in Osaka, Japan.
             I studied Commerce at <strong>Doshisha University</strong> in Kyoto and
@@ -54,7 +59,9 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-2 text-vermilion">My Interests</h2>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: "#E34234" }}>
+            My Interests
+          </h2>
           <ul className="list-disc list-inside">
             <li>Traveling the world</li>
             <li>Exploring Japanese cuisine</li>
@@ -64,20 +71,24 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-2 text-vermilion">Why I Started Ask Maeda-san</h2>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: "#E34234" }}>
+            Why I Started Ask Maeda-san
+          </h2>
           <p>
             I founded Ask Maeda-san to help more people around the world discover and experience the beauty of Japan — from its unique products and food to its culture and people.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4 text-center text-vermilion">Follow Me</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-center" style={{ color: "#E34234" }}>
+            Follow Me
+          </h2>
           <div className="flex flex-col gap-4">
             <a
               href="https://www.instagram.com/cooking_japanese_in_the_uk?igsh=dzd6Y2d0ODg5b3Jq&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-orange-50 hover:bg-orange-100 text-vermilion text-center font-semibold py-3 px-4 rounded-lg shadow transition duration-300"
+              className="block bg-orange-50 hover:bg-orange-100 text-[#E34234] text-center font-semibold py-3 px-4 rounded-lg shadow transition duration-300"
             >
               Instagram: @cooking_japanese_in_the_uk
             </a>

@@ -21,4 +21,18 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.2"
   }
+  "dependencies": {
+  "next": "13.x",  
+  "react": "...",
+  "react-dom": "...",
+  "next-sitemap": "^4.2.3"   
 }
+  "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "postbuild": "next-sitemap"
+}
+}
+
+

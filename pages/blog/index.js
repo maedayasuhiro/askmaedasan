@@ -40,7 +40,7 @@ export default function BlogHomePage({ allPosts }) {
             className="relative block rounded-xl shadow-xl overflow-hidden group"
           >
             <img
-              src="/japanese food.png"
+              src="/japanese-food.png"
               alt="Japanese Food"
               className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />

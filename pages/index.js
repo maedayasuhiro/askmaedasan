@@ -46,7 +46,7 @@ export default function HomePage({ posts }) {
               <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
             </Link>
             <h1 className="text-lg md:text-2xl font-bold text-vermilion text-center">
-              Ask Maeda-san Your Private Japanese Concierge 
+              Ask Maeda-san ~Your Private Japanese Concierge~ 
             </h1>
           </div>
 

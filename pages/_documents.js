@@ -6,13 +6,14 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* ファビコン */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-        {/* ブラウザのテーマカラー（オプション） */}
+        {/* テーマカラー */}
         <meta name="theme-color" content="#E34234" />
         <meta name="msapplication-TileColor" content="#E34234" />
 
-        {/* Instagram 埋め込み用 SDK */}
+        {/* Instagram SDK */}
         <script async defer src="https://www.instagram.com/embed.js"></script>
       </Head>
       <body>

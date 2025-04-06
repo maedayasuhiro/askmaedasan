@@ -39,7 +39,7 @@ export default function HomePage({ posts }) {
             )}
           </div>
 
-          <h1 className="text-lg md:text-2xl font-bold text-pink-600 text-center flex-1">
+          <h1 className="text-lg md:text-2xl font-bold text-vermilion text-center flex-1">
             Ask Maeda-san - Your Private Japanese Concierge
           </h1>
 
@@ -62,7 +62,7 @@ export default function HomePage({ posts }) {
         <p className="text-md md:text-lg mt-4 mb-6 text-center max-w-xl mx-auto">
           Need something from Japan? Whether it's a unique product, local shop purchase, or special request – Ask Maeda-san will handle it for you!
           <br />
-          <strong className="text-pink-600">Local Japanese staff will fulfill your request directly in Japan.</strong>
+          <strong className="text-vermilion">Local Japanese staff will fulfill your request directly in Japan.</strong>
         </p>
 
         {/* Language Switch Buttons */}
@@ -75,7 +75,7 @@ export default function HomePage({ posts }) {
 
         {/* How It Works */}
         <section className="mb-10 max-w-3xl w-full mx-auto">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-pink-600">How It Works</h2>
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">How It Works</h2>
           <ol className="list-decimal list-inside bg-white p-6 rounded-xl shadow-md text-sm md:text-base">
             <li>You submit a request via the form</li>
             <li>Maeda-san (Admin) replies by email shortly</li>
@@ -89,7 +89,7 @@ export default function HomePage({ posts }) {
         {/* Consultation Request */}
         <section className="max-w-md w-full mx-auto mb-10">
           <div className="bg-white p-6 rounded-xl shadow-xl">
-            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-pink-600">Consultation Request</h2>
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">Consultation Request</h2>
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSfGlCsPX_wOAKUWvk-wox-jW1m-r7JL5O8xXxSB8Hq4hxbfSA/viewform?embedded=true"
               width="100%"
@@ -103,22 +103,22 @@ export default function HomePage({ posts }) {
 
         {/* Customer Reviews */}
         <section className="max-w-3xl w-full mx-auto mb-10">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-pink-600">Customer Reviews</h2>
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">Customer Reviews</h2>
           <div className="space-y-6 text-sm md:text-base">
             <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2 text-pink-600">★★★★★</p>
+              <p className="mb-2 text-vermilion">★★★★★</p>
               <p className="font-semibold">Customer: Emily</p>
               <p className="italic mb-2">Request: Japanese Product Delivery</p>
               <p>I am a textile artist and wanted to order washi paper yarn from Japan. Thanks to Ask Maeda-san, I was able to get materials only available locally. They even sent me some Japanese snacks along with it.</p>
             </div>
             <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2 text-pink-600">★★★★★</p>
+              <p className="mb-2 text-vermilion">★★★★★</p>
               <p className="font-semibold">Customer: Camy</p>
               <p className="italic mb-2">Request: Zoom Meeting</p>
               <p>I’m planning to study in Japan and wanted to chat with a local. I learned a lot about job hunting and sightseeing tips. Thank you!</p>
             </div>
             <div className="bg-white p-4 rounded shadow-md">
-              <p className="mb-2 text-pink-600">★★★★★</p>
+              <p className="mb-2 text-vermilion">★★★★★</p>
               <p className="font-semibold">Customer: David</p>
               <p className="italic mb-2">Request: Local Tour Guide</p>
               <p>I wanted to explore Japan with a local guide. Kohei took me to his favorite izakaya and restaurants. Thank you, Kohei!</p>
@@ -128,13 +128,13 @@ export default function HomePage({ posts }) {
 
         {/* Latest Blog Posts */}
         <section className="max-w-3xl w-full mx-auto mb-10">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-pink-600">Latest Blog Posts</h2>
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">Latest Blog Posts</h2>
           {filteredPosts.map((post) => (
             <div key={post.slug} className="bg-white p-4 rounded shadow-md mb-4">
-              <h3 className="text-lg font-semibold text-pink-600">{post.title}</h3>
+              <h3 className="text-lg font-semibold text-vermilion">{post.title}</h3>
               <p className="text-gray-600 text-sm">{post.date}</p>
               <p>{post.excerpt}</p>
-              <Link href={`/blog/${post.slug}`} className="text-pink-600 underline">Read More</Link>
+              <Link href={`/blog/${post.slug}`} className="text-vermilion underline">Read More</Link>
             </div>
           ))}
         </section>
@@ -142,15 +142,15 @@ export default function HomePage({ posts }) {
         {/* Footer Links */}
         <div className="flex flex-wrap gap-4 justify-center mb-6">
           <Link href="/about">
-            <button className="bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition">About Me</button>
+            <button className="bg-vermilion text-white px-6 py-3 rounded-lg hover:bg-opacity-80 transition">About Me</button>
           </Link>
           <Link href="/blog">
-            <button className="bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition">Visit Our Blog</button>
+            <button className="bg-vermilion text-white px-6 py-3 rounded-lg hover:bg-opacity-80 transition">Visit Our Blog</button>
           </Link>
         </div>
 
         <div className="mb-6 text-center">
-          <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-pink-600 underline">
+          <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-vermilion underline">
             Privacy Policy & Terms
           </a>
         </div>

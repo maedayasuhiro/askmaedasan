@@ -12,7 +12,10 @@ module.exports = {
       backgroundImage: {
         japan: "url('/bg-japan.jpg')",
       },
+      colors: {
+        vermilion: "#E34234", // 和風の朱色（鳥居色）
+      },
     },
   },
   plugins: [],
-}
+};

@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import React, { useState } from "react";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
@@ -27,6 +28,23 @@ export default function HomePage({ posts }) {
       className="min-h-screen bg-cover bg-center text-gray-900"
       style={{ backgroundImage: "url('/bg-japan.jpg')" }}
     >
+{/* Google Translate Script */}
+    <Script
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+      strategy="afterInteractive"
+    />
+    <Script id="google-translate-init" strategy="afterInteractive">
+      {`
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,ja,es,fr',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+      `}
+    </Script>
+
       <div className="bg-white bg-opacity-60 min-h-screen px-4 md:px-8 py-8 md:py-16">
         {/* Header */}
         <header className="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm py-4 shadow-md w-full flex items-center justify-between px-4 md:px-8">

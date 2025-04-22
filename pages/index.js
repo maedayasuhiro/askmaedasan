@@ -104,14 +104,6 @@ export default function HomePage({ posts }) {
           </p>
         </div>
 
-        {/* Language Switch */}
-        <div className="mb-6 flex flex-wrap justify-center gap-2">
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">English</button>
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">日本語</button>
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Español</button>
-          <button className="px-4 py-2 rounded bg-white shadow hover:bg-gray-200">Français</button>
-        </div>
-
         {/* How It Works */}
         // pages/index.js
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

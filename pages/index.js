@@ -9,6 +9,8 @@ export async function getStaticProps() {
   };
 }
 
+<div id="google_translate_element" className="text-sm"></div>
+
 export default function HomePage({ posts }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);

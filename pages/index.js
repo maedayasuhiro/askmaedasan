@@ -155,7 +155,8 @@ export default function Home() {
               <div key={index} className="bg-white p-4 rounded shadow-md">
                 <p className="mb-2 text-vermilion">★★★★★</p>
                 <p className="font-semibold">Customer: {name}</p>
-                <p className="italic mb-2">Request: {request}</p>
+                <p className="italic mb-2">Request: <span className="bg-vermilion text-white px-2 py-0.5 rounded text-sm font-semibold">{request}</span>
+</p>
                 <p>{message}</p>
               </div>
             ))}

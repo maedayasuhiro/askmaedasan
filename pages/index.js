@@ -32,14 +32,16 @@ export default function HomePage({ posts }) {
             <button className="text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
               ≡
             </button>
-            {menuOpen && (
-              <div className="absolute mt-2 bg-white shadow-md rounded-lg w-40">
-                <Link href="/" className="block px-4 py-2 hover:bg-gray-100">Home</Link>
-                <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">About Me</Link>
-                <Link href="/blog" className="block px-4 py-2 hover:bg-gray-100">Blog</Link>
-                <Link href="/privacy" className="block px-4 py-2 hover:bg-gray-100">Privacy Policy</Link>
-              </div>
-            )}
+{isOpen && (
+  <div className="absolute top-14 left-2 bg-white shadow-xl rounded-lg border border-vermilion w-40 z-50">
+    <ul className="flex flex-col text-left p-2 space-y-2">
+      <li><a href="/" className="hover:text-vermilion">Home</a></li>
+      <li><a href="/about" className="hover:text-vermilion">About Me</a></li>
+      <li><a href="/blog" className="hover:text-vermilion">Blog</a></li>
+      <li><a href="/privacy" className="hover:text-vermilion">Privacy Policy</a></li>
+    </ul>
+  </div>
+)}
           </div>
 
 <div className="flex-1 flex items-center justify-center text-center px-2">

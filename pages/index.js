@@ -125,15 +125,15 @@ export default function HomePage({ posts }) {
             {[{
               name: "Emily",
               request: "Japanese Product Delivery",
-              message: "I am a textile artist and wanted to order washi paper yarn from Japan..."
+              message: "I am a textile artist and wanted to order washi paper yarn from Japan. Thanks to Ask Maeda-san, I was able to get materials only available locally. They even sent me some Japanese snacks along with it."
             }, {
               name: "Cameron",
               request: "Zoom Meeting",
-              message: "I’m planning to study in Japan and wanted to chat with a local..."
+              message: "I’m planning to study in Japan and wanted to chat with a local. I learned a lot about job hunting and sightseeing tips. Thank you!"
             }, {
               name: "David",
               request: "Local Tour Guide",
-              message: "I wanted to explore Japan with a local guide..."
+              message: "I wanted to explore Japan with a local guide. Kohei took me to his favorite izakaya and restaurants. Thank you, Kohei!"
             }].map(({ name, request, message }, index) => (
               <div key={index} className="bg-white p-4 rounded shadow-md">
                 <p className="mb-2 text-vermilion">★★★★★</p>

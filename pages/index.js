@@ -91,17 +91,34 @@ export default function HomePage({ posts }) {
         </div>
 
         {/* How It Works */}
-        <section className="mb-10 max-w-3xl w-full mx-auto">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-center text-vermilion">How It Works</h2>
-          <ol className="list-decimal list-inside bg-white p-6 rounded-xl shadow-md text-sm md:text-base">
-            <li>You submit a request via the form</li>
-            <li>Maeda-san (Admin) replies by email shortly</li>
-            <li>Details confirmed and payment completed</li>
-            <li>Our Japanese staff handles the request</li>
-            <li>User confirms completion</li>
-            <li>All done!</li>
-          </ol>
-        </section>
+        // pages/index.js
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faFileAlt, faEnvelope, faYenSign, 
+  faUserCog, faCheckCircle, faFlagCheckered 
+} from '@fortawesome/free-solid-svg-icons';
+
+export default function Home() {
+  return (
+    <section style={{ padding: '2rem' }}>
+      <h2 style={{ color: '#d32f2f' }}>How It Works</h2>
+      <ul style={{
+        listStyle: 'none',
+        backgroundColor: '#fff',
+        padding: '20px',
+        borderRadius: '10px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+      }}>
+        <li><FontAwesomeIcon icon={faFileAlt} />  You submit a request via the form</li>
+        <li><FontAwesomeIcon icon={faEnvelope} />  Maeda-san (Admin) replies by email shortly</li>
+        <li><FontAwesomeIcon icon={faYenSign} />  Details confirmed and payment completed</li>
+        <li><FontAwesomeIcon icon={faUserCog} />  Our Japanese staff handles the request</li>
+        <li><FontAwesomeIcon icon={faCheckCircle} />  User confirms completion</li>
+        <li><FontAwesomeIcon icon={faFlagCheckered} />  All done!</li>
+      </ul>
+    </section>
+  );
+}
 
         {/* Consultation Form */}
         <section className="max-w-md w-full mx-auto mb-10">

@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import Head from "next/head"; // ← 追加
+import Head from "next/head";
 import { getAllPosts } from "../../lib/posts";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import markdownIt from "markdown-it";
+import markdownToHtml from "../../lib/markdownToHtml"; // ← 変更点：markdown-it の代わり
 
+// 動的ルーティングのパス生成
 export async function getStaticPaths() {
   const posts = getAllPosts();
   const paths = posts.map((post) => ({
@@ -14,13 +15,14 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
+// 個別記事のデータ取得
 export async function getStaticProps({ params }) {
   const fullPath = path.join(process.cwd(), "posts", `${params.slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const md = new markdownIt();
-  const htmlContent = md.render(content);
+  // markdownをHTMLに変換し、Instagram埋め込みも反映可能に
+  const htmlContent = await markdownToHtml(content);
 
   return {
     props: {
@@ -32,6 +34,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
+// 記事表示コンポーネント
 export default function BlogPost({ title, date, category, content }) {
   useEffect(() => {
     if (typeof window !== "undefined" && window.instgrm) {
@@ -41,7 +44,6 @@ export default function BlogPost({ title, date, category, content }) {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-      {/* Instagram埋め込みscriptの読み込み */}
       <Head>
         <script async src="https://www.instagram.com/embed.js"></script>
       </Head>
